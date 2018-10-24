@@ -1,0 +1,28 @@
+.left-middle-right-wrap{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.left-middle-right-wrap .left{
+    width: 300px;
+    min-height: 800px;
+    background-color: #485cbd;
+    font-size: 20px;
+    color: #fdf6e3;
+    float: left;
+}
+.left-middle-right-wrap .center{
+    min-height: 100px;
+    background-color: #0895cc;
+    padding: 10px 310px;
+}
+.left-middle-right-wrap .right{
+    width: 300px;
+    min-height: 100px;
+    background-color: #f60362;
+    font-size: 20px;
+    color: #fdf6e3;
+    float: right;
+}
+.left-middle-right-wrap .clear{
+    clear: both;
+}

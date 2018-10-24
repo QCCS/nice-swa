@@ -1,0 +1,15 @@
+.components-md-wrap{
+    padding: 10px;
+}
+.components-md-wrap .nav-test{
+    height: 80px;
+}
+.components-md-wrap .table-test{
+    height: 400px;
+}
+.components-md-wrap .tab-test{
+    height: 160px;
+}
+.components-md-wrap .menus-test{
+    height: 160px;
+}

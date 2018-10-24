@@ -1,0 +1,21 @@
+.components-md-wrap{
+    padding: 10px;
+}
+
+.components-md-wrap .expansion-test{
+    height: 320px;
+}
+.components-md-wrap .nav-test{
+    height: 80px;
+    background: gainsboro;
+    padding: 10px;
+}
+.components-md-wrap .table-test{
+    height: 400px;
+}
+.components-md-wrap .tab-test{
+    height: 160px;
+}
+.components-md-wrap .menus-test{
+    height: 200px;
+}
