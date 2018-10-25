@@ -1,6 +1,9 @@
 const webpack = require("webpack");
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
+//分离css
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 let env = process.env;
 console.log(env.NODE_ENV)
 let proxy = null;
@@ -44,6 +47,7 @@ module.exports = {
         ,proxy
     },
     devtool,//好几种模式
+    mode:'development',
     module: {
         rules: [
             {
@@ -54,11 +58,6 @@ module.exports = {
                     options: {presets: ["react", "es2015", "stage-0"]}
                 }],
             },
-
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
-            },
             {
                 test: /\.(png|jpg|gif)$/,
                 use: [
@@ -67,7 +66,15 @@ module.exports = {
                         options: {}
                     }
                 ]
+            },
+            {
+                test: /\.(scss|css)$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ['css-loader', 'sass-loader']
+                })
             }
+
         ]
     },
     plugins: [
@@ -79,6 +86,7 @@ module.exports = {
             threshold: 10240,// 资源文件大于10240B=10kB时会被压缩
             minRatio: 0.8 // 最小压缩比达到0.8时才会被压缩
         }),
+        new ExtractTextPlugin("index.css"),
         new copyWebpackPlugin([{
             from: __dirname +'/docs',//打包的静态资源目录地址
             to:'./docs' //打包到 dist 下面的public

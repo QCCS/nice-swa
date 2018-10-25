@@ -1,0 +1,12 @@
+.body{
+    background: darkred;
+    padding: 10px;
+    .test{
+        background: grey;
+        padding: 10px;
+        .test-inner{
+            background: darkorange;
+            padding: 10px;
+        }
+    }
+}

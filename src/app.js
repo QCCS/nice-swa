@@ -2,13 +2,13 @@
  * Created by zhouli on 18/9/17
  */
 import React from 'react';
-import Header from './js/react-components/header';
-import Footer from './js/react-components/footer';
+import Header from './react-components/header';
+import Footer from './react-components/footer';
 import Routes from "./routes";
 import {withStyles} from '@material-ui/core/styles';
-import HeaderContent from './js/react-components/header-content/header-content';
+import HeaderContent from './react-components/header-content/header-content';
 import {connect} from 'react-redux';
-import SingleLineGridList from './js/pages/components-test/single-line-grid-list';
+import SingleLineGridList from './pages/components-test/single-line-grid-list';
 
 const styles = theme => ({
     root: {

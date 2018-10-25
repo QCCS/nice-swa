@@ -9,7 +9,7 @@ import './css/reset.css';
 
 //使用 redux
 import { Provider } from 'react-redux';
-import store from './js/redux/store';
+import store from './redux/store';
 
 // BrowserRouter 慎用
 import { HashRouter as Router} from "react-router-dom";

@@ -1,7 +1,7 @@
-import image0 from '../../../assets/images/4.png';
-import image3 from '../../../assets/images/2.jpg';
-import image1 from '../../../assets/images/4.png';
-import image2 from '../../../assets/images/es.png';
+import image0 from '../../assets/images/4.png';
+import image3 from '../../assets/images/2.jpg';
+import image1 from '../../assets/images/4.png';
+import image2 from '../../assets/images/es.png';
 
 const tileData = [
     {

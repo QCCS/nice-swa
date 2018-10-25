@@ -5,7 +5,7 @@
  * Created by zhouli on 18/9/19
  */
 import React from 'react';
-import '../../../css/pages/list/one.css';
+import '../../css/pages/list/one.css';
 import Icon from '@material-ui/core/Icon';
 import { withStyles } from '@material-ui/core/styles';
 

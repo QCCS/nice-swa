@@ -2,8 +2,8 @@
  * Created by zhouli on 18/9/17
  */
 import React from 'react';
-import '../../css/react-components/header.css';
-class Header extends React.Component {
+import '../css/react-components/footer.css';
+class Footer extends React.Component {
     constructor(){
         super();
 
@@ -12,9 +12,9 @@ class Header extends React.Component {
     }
 
     render = () => {
-        return (<div className="header-wrap">
+        return (<div className="footer-wrap">
             {this.props.children}
         </div> )
     }
 }
-export default Header;
+export default Footer;

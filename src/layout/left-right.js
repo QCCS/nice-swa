@@ -2,7 +2,7 @@
  * Created by zhouli on 18/9/17
  */
 import React from 'react';
-import '../../css/layout/left-right.css';
+import '../css/layout/left-right.css';
 class LeftRight extends React.Component {
     constructor(){
         super();

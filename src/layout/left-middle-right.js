@@ -2,7 +2,8 @@
  * Created by zhouli on 18/9/17
  */
 import React from 'react';
-import '../../css/layout/left-middle-right.css';
+import '../css/layout/left-middle-right.css';
+import '../css/index.scss';
 import PropTypes from 'prop-types';
 import ControlledExpansionPanels from '../pages/components-test/controlled-expansion-panels';
 import SideNav from '../pages/components-test/side-nav';
@@ -38,7 +39,7 @@ class LeftMiddleRight extends React.Component {
     }
 
     postJson119 = () => {
-        var url = "/api";
+        let url = "/api";
         fetch(url, {
             method: "post",
             headers: {},
@@ -59,7 +60,7 @@ class LeftMiddleRight extends React.Component {
             });
     }
     getJson119 = () => {
-        var url = "/api";
+        let url = "/api";
         fetch(url, {
             method: "get",
             headers: {},
@@ -92,6 +93,13 @@ class LeftMiddleRight extends React.Component {
 
 
             <div class="center">
+                <div class="body">
+                    body
+                    <div class="test">
+                        test
+                        <div class="test-inner">test-inner</div>
+                    </div>
+                </div>
                 {this.props.middle}
                 {/*考虑把createContext1做成函数*/}
                 <appContext.Provider value={{createContext1: 'createContext3', createContext2: 'createContext2'}}>
