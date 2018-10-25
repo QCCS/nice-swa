@@ -4,7 +4,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { createFee,deleteFee,updateFee,getFee,getFees} from '../../service/api';
-import '../../css/pages/list/two.css';
+import '../../styles/pages/list/two.css';
 
 const styles = theme => ({
     root: {

@@ -10,8 +10,8 @@ import SideNav from '../pages/components-test/side-nav';
 import appContext from '../global-data/app-context';
 import appContextTwo from '../global-data/app-context-two';
 import actions from '../redux/action';
-import '../css/layout/left-middle-right.css';
-import '../css/index.scss';
+import '../styles/layout/left-middle-right.css';
+import '../styles/index.scss';
 
 class LeftMiddleRight extends React.Component {
     constructor() {

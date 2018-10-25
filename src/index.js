@@ -4,8 +4,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
-import './css/index.css';
-import './css/reset.css';
+import './styles/index.css';
+import './styles/reset.css';
 
 //使用 redux
 import { Provider } from 'react-redux';

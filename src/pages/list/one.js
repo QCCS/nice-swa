@@ -18,7 +18,7 @@ import CustomPaginationActionsTable from '../components-test/table-pagination-ac
 import ScrollableTabsButtonForce from '../components-test/scrollable-tabs-button-force';
 import ListItemComposition from '../components-test/side-nav';
 import ControlledExpansionPanels from '../components-test/controlled-expansion-panels';
-import '../../css/pages/list/one.css';
+import '../../styles/pages/list/one.css';
 
 const styles = theme => ({
     root: {
