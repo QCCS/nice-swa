@@ -5,8 +5,8 @@ axios.interceptors.request.use(function (config) {
     // Do something before request is sent
     console.log(config)
     config.headers = {
-        "Content-Type":"application/json",
-        "authorization":"Bearer "+window.localStorage.getItem("authorization")
+        'Content-Type':'application/json',
+        'authorization':'Bearer '+window.localStorage.getItem('authorization')
     }
     return config;
 }, function (error) {

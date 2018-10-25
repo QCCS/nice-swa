@@ -6,3 +6,4 @@ css
 scss
 redux
 axios
+eslint
