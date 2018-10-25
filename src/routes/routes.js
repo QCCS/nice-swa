@@ -2,18 +2,19 @@
  * Created by zhouli on 18/9/17
  */
 import React from 'react';
-import LeftRight from './layout/left-right';
-import Tags from './react-components/tag';
-import LeftMiddleRight from './layout/left-middle-right';
 import {Route} from "react-router-dom";
-import ComponentsMd from './pages/components-test/components-md';
-import SideNavList from './react-components/side-nav/side-nav-list';
-import MiniDrawer from './pages/components-test/mini-drawer';
-import ListOne from './pages/list/one';
-import ListTwo from './pages/list/two';
+
+import LeftRight from '../layout/left-right';
+import Tags from '../react-components/tag';
+import LeftMiddleRight from '../layout/left-middle-right';
+import ComponentsMd from '../pages/components-test/components-md';
+import SideNavList from '../react-components/side-nav/side-nav-list';
+import MiniDrawer from '../pages/components-test/mini-drawer';
+import ListOne from '../pages/list/one';
+import ListTwo from '../pages/list/two';
 //渲染路由关系
 function routerRender() {
-    
+
 }
 
 const Home = () => (

@@ -27,11 +27,9 @@ import Divider from '@material-ui/core/Divider';
 import Slide from '@material-ui/core/Slide';
 import CloseIcon from '@material-ui/icons/Close';
 import {connect} from 'react-redux';
-import actions from '../../redux/action';
-
 import Paper from '@material-ui/core/Paper';
 
-
+import actions from '../../redux/action';
 import {loginService} from '../../service/api';
 
 function Transition(props) {

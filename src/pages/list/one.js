@@ -5,7 +5,6 @@
  * Created by zhouli on 18/9/19
  */
 import React from 'react';
-import '../../css/pages/list/one.css';
 import Icon from '@material-ui/core/Icon';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -19,6 +18,8 @@ import CustomPaginationActionsTable from '../components-test/table-pagination-ac
 import ScrollableTabsButtonForce from '../components-test/scrollable-tabs-button-force';
 import ListItemComposition from '../components-test/side-nav';
 import ControlledExpansionPanels from '../components-test/controlled-expansion-panels';
+import '../../css/pages/list/one.css';
+
 const styles = theme => ({
     root: {
         display: 'flex',

@@ -2,13 +2,10 @@
  * Created by zhouli on 18/9/19
  */
 import React from 'react';
-import '../../css/pages/components-test/components-md.css';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import { withStyles } from '@material-ui/core/styles';
-
 import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
-
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import RestoreIcon from '@material-ui/icons/Restore';
@@ -18,6 +15,8 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import CustomPaginationActionsTable from './table-pagination-actions';
 import ScrollableTabsButtonForce from './scrollable-tabs-button-force';
 import ListItemComposition from './side-nav';
+import '../../css/pages/components-test/components-md.css';
+
 const styles = theme => ({
     root: {
         display: 'flex',

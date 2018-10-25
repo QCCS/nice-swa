@@ -2,16 +2,16 @@
  * Created by zhouli on 18/9/17
  */
 import React from 'react';
-import '../css/layout/left-middle-right.css';
-import '../css/index.scss';
+import {connect} from 'react-redux';
+
 import PropTypes from 'prop-types';
 import ControlledExpansionPanels from '../pages/components-test/controlled-expansion-panels';
 import SideNav from '../pages/components-test/side-nav';
-
 import appContext from '../global-data/app-context';
 import appContextTwo from '../global-data/app-context-two';
-import {connect} from 'react-redux';
 import actions from '../redux/action';
+import '../css/layout/left-middle-right.css';
+import '../css/index.scss';
 
 class LeftMiddleRight extends React.Component {
     constructor() {
