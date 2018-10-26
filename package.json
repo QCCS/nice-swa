@@ -4,7 +4,8 @@
     "description": "node-blog-admin",
     "main": "src/index.js",
     "scripts": {
-        "test": "test",
+        "test": "jest",
+        "testInit": "jest --init",
         "webpack": "NODE_ENV=prod webpack",
         "server": "webpack-dev-server --open",
         "dev": "NODE_ENV=dev webpack-dev-server --open",
@@ -32,6 +33,7 @@
         "eslint": "^5.7.0",
         "extract-text-webpack-plugin": "^4.0.0-beta.0",
         "file-loader": "^2.0.0",
+        "jest": "^23.6.0",
         "node-sass": "^4.9.4",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.0",
