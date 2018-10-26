@@ -83,7 +83,7 @@ module.exports = {
   // notifyMode: "always",
 
   // A preset that is used as a base for Jest's configuration
-  // preset: null,
+    "preset": "jest-puppeteer",
 
   // Run tests from one or more projects
   // projects: null,
@@ -133,10 +133,10 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.js?(x)",
-  //   "**/?(*.)+(spec|test).js?(x)"
-  // ],
+  testMatch: [
+    "**/__tests__/**/*.js?(x)",
+    "**/?(*.)+(spec|test).js?(x)"
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -162,9 +162,9 @@ module.exports = {
   // transform: null,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  // transformIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  transformIgnorePatterns: [
+    "/node_modules/"
+  ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,

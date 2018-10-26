@@ -5,7 +5,7 @@
     "main": "src/index.js",
     "scripts": {
         "test": "jest",
-        "testInit": "jest --init",
+        "cyp:open": "cypress open",
         "webpack": "NODE_ENV=prod webpack",
         "server": "webpack-dev-server --open",
         "dev": "NODE_ENV=dev webpack-dev-server --open",
@@ -19,6 +19,9 @@
         "material-design",
         "javascript",
         "redux",
+        "jest",
+        "puppeteer",
+        "cypress",
         "node"
     ],
     "devDependencies": {
@@ -30,11 +33,14 @@
         "compression-webpack-plugin": "^2.0.0",
         "copy-webpack-plugin": "^4.5.2",
         "css-loader": "^1.0.0",
+        "cypress": "^3.1.0",
         "eslint": "^5.7.0",
         "extract-text-webpack-plugin": "^4.0.0-beta.0",
         "file-loader": "^2.0.0",
         "jest": "^23.6.0",
+        "jest-puppeteer": "^3.4.0",
         "node-sass": "^4.9.4",
+        "puppeteer": "^1.9.0",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.0",
         "webpack": "^4.19.0",

@@ -88,8 +88,13 @@ module.exports = {
         }),
         new ExtractTextPlugin("index.css"),
         new copyWebpackPlugin([{
-            from: __dirname +'/docs',//打包的静态资源目录地址
+            from: __dirname + '/README.md',
+            to: __dirname + '/docs/README.md',
+        }]),
+        new copyWebpackPlugin([{
+            from: __dirname + '/README.md',
             to:'./docs' //打包到 dist 下面的public
         }]),
+
     ]
 }

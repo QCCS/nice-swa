@@ -9,7 +9,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import appContext from '../../global-data/app-context';
+import appContext from '../../context-data/app-context';
 const styles = theme => ({
     root: {
         width: '100%',

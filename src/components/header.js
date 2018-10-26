@@ -2,7 +2,7 @@
  * Created by zhouli on 18/9/17
  */
 import React from 'react';
-import '../styles/react-components/header.css';
+import '../styles/components/header.css';
 class Header extends React.Component {
     constructor(){
         super();

@@ -2,7 +2,7 @@
  * Created by zhouli on 18/9/17
  */
 import React from 'react';
-import '../styles/react-components/footer.css';
+import '../styles/components/footer.css';
 class Footer extends React.Component {
     constructor(){
         super();

@@ -5,10 +5,10 @@ import React from 'react';
 import {withStyles} from '@material-ui/core/styles';
 import {connect} from 'react-redux';
 
-import Header from './react-components/header';
-import Footer from './react-components/footer';
+import Header from './components/header';
+import Footer from './components/footer';
 import Routes from "./routes/routes";
-import HeaderContent from './react-components/header-content/header-content';
+import HeaderContent from './components/header-content/header-content';
 import SingleLineGridList from './pages/components-test/single-line-grid-list';
 
 const styles = theme => ({

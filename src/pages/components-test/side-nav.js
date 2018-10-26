@@ -12,7 +12,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import SendIcon from '@material-ui/icons/Send';
-import appContextTwo from '../../global-data/app-context-two';
+import appContextTwo from '../../context-data/app-context-two';
 
 const styles = theme => ({
     menuItem: {

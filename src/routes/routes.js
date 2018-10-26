@@ -5,10 +5,10 @@ import React from 'react';
 import {Route} from "react-router-dom";
 
 import LeftRight from '../layout/left-right';
-import Tags from '../react-components/tag';
+import Tags from '../components/tag';
 import LeftMiddleRight from '../layout/left-middle-right';
 import ComponentsMd from '../pages/components-test/components-md';
-import SideNavList from '../react-components/side-nav/side-nav-list';
+import SideNavList from '../components/side-nav/side-nav-list';
 import MiniDrawer from '../pages/components-test/mini-drawer';
 import ListOne from '../pages/list/one';
 import ListTwo from '../pages/list/two';
