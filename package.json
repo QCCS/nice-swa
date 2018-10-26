@@ -5,6 +5,7 @@
     "main": "src/index.js",
     "scripts": {
         "test": "jest",
+        "testReport":"jest --watchAll --coverage",
         "cyp:open": "cypress open",
         "webpack": "NODE_ENV=prod webpack",
         "server": "webpack-dev-server --open",
