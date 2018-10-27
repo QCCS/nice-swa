@@ -66,9 +66,9 @@ npm run build
 + [x] webpack配置
 + [x] 单元测试样例
 + [ ] E2E集成测试样例
-+ [ ]脚手架工具
-+ [ ]开发命令行工具
-+ [ ]多环境配置
++ [ ] 脚手架工具
++ [ ] 开发命令行工具
++ [ ] 多环境配置
 
 ## 项目截图
 ![](https://github.com/QCCS/nice-swa/blob/master/docs/imgs/nice-swa.png)
