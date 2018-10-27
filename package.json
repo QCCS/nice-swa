@@ -7,6 +7,7 @@
         "test": "jest",
         "testReport":"jest --watchAll --coverage",
         "cyp:open": "cypress open",
+        "build": "NODE_ENV=prod webpack",
         "webpack": "NODE_ENV=prod webpack",
         "server": "webpack-dev-server --open",
         "dev": "NODE_ENV=dev webpack-dev-server --open",

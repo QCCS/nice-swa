@@ -33,7 +33,7 @@ npm i --no-package-lock
 //运行开发环境
 npm run dev
 //打包
-npm run webpck
+npm run build
 ```
 
 ## 项目目录
@@ -70,6 +70,9 @@ npm run webpck
 + [ ]开发命令行工具
 + [ ]多环境配置
 
+## 项目截图
+![](https://raw.githubusercontent.com/QCCS/nice/master/docs/imgs/nice-swa.png)
+
 ## 建议安装工具
 
 - git：
@@ -81,3 +84,5 @@ node 版本管理
 - nrm：
 npm 源管理
 
+## 参考网站
+- [material-ui](https://material-ui.com/)
