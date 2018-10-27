@@ -71,8 +71,7 @@ npm run build
 + [ ]多环境配置
 
 ## 项目截图
-![](https://raw.githubusercontent.com/QCCS/nice/master/docs/imgs/nice-swa.png)
-
+![](https://github.com/QCCS/nice-swa/blob/master/docs/imgs/nice-swa.png)
 ## 建议安装工具
 
 - git：
