@@ -7,6 +7,10 @@
 集成了 jest 单元测试，cypress-e2e 测试；
 - [项目地址](https://github.com/QCCS/nice-swa)
 - [在线文档](https://qccs.github.io/nice-swa/docs/#/)
+
+## nice-swa后端-koa2+mysql
+[nice-swa后端项目地址](https://github.com/QCCS/nice-swa-s)
+
 ## 环境依赖
 node v9.0.0
 

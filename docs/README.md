@@ -7,6 +7,10 @@
 集成了 jest 单元测试，cypress-e2e 测试；
 - [项目地址](https://github.com/QCCS/nice-swa)
 - [在线文档](https://qccs.github.io/nice-swa/docs/#/)
+
+## nice-swa后端-koa2+mysql
+[nice-swa后端项目地址](https://github.com/QCCS/nice-swa-s)
+
 ## 环境依赖
 node v9.0.0
 
@@ -33,7 +37,6 @@ npm i --no-package-lock
 //运行开发环境
 npm run dev
 //打包
-npm run webpck
 npm run build
 ```
 
@@ -67,13 +70,12 @@ npm run build
 + [x] webpack配置
 + [x] 单元测试样例
 + [ ] E2E集成测试样例
-+ [ ]脚手架工具
-+ [ ]开发命令行工具
-+ [ ]多环境配置
++ [ ] 脚手架工具
++ [ ] 开发命令行工具
++ [ ] 多环境配置
 
 ## 项目截图
-![](https://raw.githubusercontent.com/QCCS/nice/master/docs/imgs/nice-swa.png)
-
+![](https://github.com/QCCS/nice-swa/blob/master/docs/imgs/nice-swa.png)
 ## 建议安装工具
 
 - git：
