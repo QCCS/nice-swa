@@ -5,7 +5,7 @@
     "main": "src/index.js",
     "scripts": {
         "test": "jest",
-        "testReport":"jest --watchAll --coverage",
+        "testReport": "jest --watchAll --coverage",
         "cyp:open": "cypress open",
         "webpack": "NODE_ENV=prod webpack",
         "server": "webpack-dev-server --open",
@@ -27,6 +27,7 @@
     ],
     "devDependencies": {
         "babel-cli": "^6.26.0",
+        "babel-eslint": "^10.0.1",
         "babel-loader": "^7.1.5",
         "babel-preset-es2015": "^6.24.1",
         "babel-preset-react": "^6.24.1",
@@ -36,6 +37,7 @@
         "css-loader": "^1.0.0",
         "cypress": "^3.1.0",
         "eslint": "^5.7.0",
+        "eslint-plugin-react": "^7.11.1",
         "extract-text-webpack-plugin": "^4.0.0-beta.0",
         "file-loader": "^2.0.0",
         "jest": "^23.6.0",

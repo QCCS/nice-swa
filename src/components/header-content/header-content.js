@@ -304,11 +304,11 @@ class HeaderContent extends React.Component {
 
                 <AppBar position="static">
                     <Toolbar>
-                        <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-                            <MenuIcon/>
-                        </IconButton>
+                        {/*<IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">*/}
+                            {/*<MenuIcon/>*/}
+                        {/*</IconButton>*/}
                         <Typography className={classes.title} variant="title" color="inherit" noWrap>
-                            Material-UI Test
+                            Node Blog Manage System
                         </Typography>
 
                         <div className={classes.grow}/>
