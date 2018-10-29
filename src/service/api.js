@@ -2,7 +2,9 @@
  * Created by zhouli on 18/9/20
  */
 import request from '../utils/request';
-let baseUrl = 'http://47.100.13.168:9113';
+import conf from '../config';
+
+let baseUrl = conf.baseUrl;
 //登陆
 export function loginService(obj) {
     return request(baseUrl+'/api/login'+'?mobile='+obj.mobile+'&password='+obj.password, {

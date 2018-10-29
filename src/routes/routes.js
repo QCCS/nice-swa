@@ -3,7 +3,6 @@
  */
 import React from 'react';
 import {Route} from "react-router-dom";
-
 import LeftRight from '../layout/left-right';
 import Tags from '../components/tag';
 import LeftMiddleRight from '../layout/left-middle-right';
