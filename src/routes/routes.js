@@ -2,30 +2,28 @@
  * Created by zhouli on 18/9/17
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Route} from 'react-router-dom';
 import LeftRight from '../layout/left-right';
 import Tags from '../components/tag';
 import LeftMiddleRight from '../layout/left-middle-right';
 import SideNavList from '../components/side-nav/side-nav-list';
-import MiniDrawer from '../pages/components-test/mini-drawer';
+import MiniDrawer from '../components/components-test/mini-drawer';
 import routeConf from './router-conf';
 const Home = () => (
-    <div>
-        <LeftMiddleRight
-            left={<div>left</div>}
-            right={<div>right</div>}
-            middle={<div><Tags tags={['tags1']}></Tags></div>}
-        />
-    </div>
+    <LeftMiddleRight
+        left={<div>left</div>}
+        right={<div>right</div>}
+        middle={<div><Tags tags={['tags1']}></Tags></div>}
+    />
 );
 //列表
-const list = ({ match }) => (
-    <div>
-        <LeftRight left={<div>
+const listPage = ({ match }) => (
+    <LeftRight
+        left={<div>
             <SideNavList match={match}></SideNavList>
         </div>}
         right={<div>
-
             <Route path={`${match.url}/:listId`} component={listDetail} />
             <Route
                 exact
@@ -33,9 +31,12 @@ const list = ({ match }) => (
                 render={() => <MiniDrawer/>}
             />
         </div>}
-        />
-    </div>
+    />
 );
+//for eslint
+listPage.propTypes = {
+    match: PropTypes.object.isRequired
+};
 //列表详情
 const listDetail = (match) => {
     let listId = match.match.params.listId;
@@ -47,13 +48,21 @@ const listDetail = (match) => {
         </div>
     );
     function _getComponentById(rList,listId) {
+        let c = null;
         for(let key in rList){
-            console.log(key)
             if(rList[key].link === listId){
-                return rList[key].component;
+                c = rList[key].component;
+                if(c){
+                    return c;
+                }
             }
+        }
+        for(let key in rList){
             if(rList[key].children){
-                return _getChildComponentById(rList[key].children,listId);
+                c = _getChildComponentById(rList[key].children,listId);
+                if(c){
+                    return c;
+                }
             }
         }
     }
@@ -67,7 +76,7 @@ const listDetail = (match) => {
 };
 const about = () => (
     <div style={{height:200}}>
-        about
+        about page
     </div>
 );
 let routeList = [
@@ -77,7 +86,7 @@ let routeList = [
     },
     {
         path: '/list',
-        component: list
+        component: listPage
     },
     {
         path: '/about',
@@ -105,7 +114,6 @@ const Routes = () => (
                         component={item.component}/>
                 );
             }
-
         })}
     </div>
 );

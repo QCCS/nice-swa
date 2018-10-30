@@ -8,7 +8,7 @@ import HeaderContent from './components/header-content/header-content';
 import Routes from "./routes/routes";
 import Header from './components/header';
 import Footer from './components/footer';
-import SingleLineGridList from './pages/components-test/single-line-grid-list';
+import SingleLineGridList from './components/components-test/single-line-grid-list';
 
 const styles = theme => ({
     root: {

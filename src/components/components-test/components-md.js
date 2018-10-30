@@ -15,7 +15,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import CustomPaginationActionsTable from './table-pagination-actions';
 import ScrollableTabsButtonForce from './scrollable-tabs-button-force';
 import ListItemComposition from './side-nav';
-import '../../styles/pages/components-test/components-md.css';
+import '../../styles/components/components-test/components-md.css';
 
 const styles = theme => ({
     root: {

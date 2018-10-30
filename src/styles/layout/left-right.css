@@ -1,18 +1,25 @@
 .left-right-wrap{
     padding-top: 2px;
-    padding-bottom: 10px;
+    height: calc(100vh - 66px);
+    overflow: auto;
 }
 .left-right-wrap .left {
     float: left;
-    width: 216px;
+    width: 230px;
     background-color: #f51657;
     min-height: 200px;
     padding-right: 4px;
+    height: calc(100vh - 66px);
+    overflow: auto;
+    position: absolute;
+    top: 66px;
+    /*change to toggle nav*/
+    left: 0px;
 }
-
 .left-right-wrap .right {
     background-color: white;
-    margin-left: 220px;
+    /*change to toggle nav*/
+    margin-left: 234px;
     min-height: 200px;
     padding: 6px;
 }

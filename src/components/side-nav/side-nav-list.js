@@ -24,6 +24,9 @@ const styles = theme => ({
     nested: {
         paddingLeft: theme.spacing.unit * 2,
     },
+    unnested: {
+        paddingLeft: theme.spacing.unit * 0,
+    },
 });
 
 class SideNavList extends React.Component {
@@ -58,7 +61,7 @@ class SideNavList extends React.Component {
                     navArr.push(_getItemByKey(route[key]));
                 } else {
                     navArr.push(_getItemNoLink(route[key],route[key].openStateFun,route[key].openState));
-                    navArr.push(_getItemChildren(route[key].children,route[key].openState));
+                    navArr.push(_getItemChildren(route[key].children,route[key].openState,true));
                 }
             }
             return navArr;
@@ -86,7 +89,7 @@ class SideNavList extends React.Component {
         function _getItemChildren(route,openState) {
             return (
                 <Collapse in={that.state[openState]} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding className={classes.nested} >
+                    <List component="div" disablePadding className={classes.nested}>
                         {_getListItem(route)}
                     </List>
                 </Collapse>

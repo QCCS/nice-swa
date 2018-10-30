@@ -35,7 +35,7 @@ class PostList extends React.Component {
     }
 
     render = () => {
-        return (<div className="post-list-wrap">
+        return (<div className="post-list-wrap" style={{height:1200}}>
             新增博客
         </div>)
     }

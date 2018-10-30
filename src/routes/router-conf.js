@@ -20,7 +20,6 @@ import PostNew from '../pages/list/post/post-new';
 import ListOne from '../pages/list/one';
 import ListTwo from '../pages/list/two';
 
-
 import CommentList from '../pages/list/comment/comment-list';
 import TagList from '../pages/list/tag/tag-list';
 
@@ -71,6 +70,7 @@ let list = {
         openState: 'postNav',
         children: {
             PostNewLink: {
+                level:1,
                 component: <PostNew/>,
                 link: 'PostNew',
                 name: '新增博客',
@@ -78,6 +78,7 @@ let list = {
                 icon: <OndemandVideoIcon></OndemandVideoIcon>
             },
             PostListLink: {
+                level:1,
                 component: <PostList/>,
                 link: 'PostList',
                 name: '博客列表',
@@ -85,6 +86,7 @@ let list = {
                 icon: <TabIcon></TabIcon>
             },
             twoLink: {
+                level:1,
                 component: <ListOne/>,
                 link: 'one',
                 name: '阅读量',
@@ -92,6 +94,7 @@ let list = {
                 icon: <TheatersIcon></TheatersIcon>
             },
             threeLink: {
+                level:1,
                 component: <ListTwo/>,
                 link: 'two',
                 name: '收藏',
