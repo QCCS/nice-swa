@@ -14,10 +14,10 @@ import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 
-import CustomPaginationActionsTable from '../components-test/table-pagination-actions';
-import ScrollableTabsButtonForce from '../components-test/scrollable-tabs-button-force';
-import ListItemComposition from '../components-test/side-nav';
-import ControlledExpansionPanels from '../components-test/controlled-expansion-panels';
+import CustomPaginationActionsTable from '../../components/components-test/table-pagination-actions';
+import ScrollableTabsButtonForce from '../../components/components-test/scrollable-tabs-button-force';
+import ListItemComposition from '../../components/components-test/side-nav';
+import ControlledExpansionPanels from '../../components/components-test/controlled-expansion-panels';
 import '../../styles/pages/list/one.css';
 
 const styles = theme => ({

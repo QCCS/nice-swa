@@ -7,10 +7,15 @@
         "test": "jest",
         "testReport": "jest --watchAll --coverage",
         "cyp:open": "cypress open",
+        "build": "NODE_ENV=prod webpack",
         "webpack": "NODE_ENV=prod webpack",
         "server": "webpack-dev-server --open",
         "dev": "NODE_ENV=dev webpack-dev-server --open",
         "prod": "NODE_ENV=prod webpack-dev-server --open"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/QCCS/node-blog-admin.git"
     },
     "keywords": [
         "es",
@@ -52,6 +57,10 @@
     },
     "author": "zhouli",
     "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/QCCS/node-blog-admin/issues"
+    },
+    "homepage": "https://github.com/QCCS/node-blog-admin#readme",
     "dependencies": {
         "@material-ui/core": "^3.1.0",
         "@material-ui/icons": "^3.0.1",
