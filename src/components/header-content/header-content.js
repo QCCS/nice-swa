@@ -202,9 +202,9 @@ class HeaderContent extends React.Component {
                 open={isMenuOpen}
                 onClose={this.handleMenuClose}
             >
-                <MenuItem onClick={this.handleLogin}>Login</MenuItem>
-                <MenuItem onClick={this.handleCloseLogout}>Logout</MenuItem>
-                <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                <MenuItem onClick={this.handleCloseLogout}>退出</MenuItem>
+                {/*<MenuItem onClick={this.handleLogin}>Login</MenuItem>*/}
+                {/*<MenuItem onClick={this.handleClose}>Profile</MenuItem>*/}
             </Menu>
         );
 
@@ -304,25 +304,25 @@ class HeaderContent extends React.Component {
 
                 <AppBar position="static">
                     <Toolbar>
-                        <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-                            <MenuIcon/>
-                        </IconButton>
+                        {/*<IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">*/}
+                            {/*<MenuIcon/>*/}
+                        {/*</IconButton>*/}
                         <Typography className={classes.title} variant="title" color="inherit" noWrap>
-                            Material-UI Test
+                            Node Blog Manage System
                         </Typography>
 
                         <div className={classes.grow}/>
                         <div className={classes.sectionDesktop}>
-                            <IconButton color="inherit">
-                                <Badge className={classes.margin} badgeContent={4} color="secondary">
-                                    <MailIcon/>
-                                </Badge>
-                            </IconButton>
-                            <IconButton color="inherit">
-                                <Badge className={classes.margin} badgeContent={17} color="secondary">
-                                    <NotificationsIcon/>
-                                </Badge>
-                            </IconButton>
+                            {/*<IconButton color="inherit">*/}
+                                {/*<Badge className={classes.margin} badgeContent={4} color="secondary">*/}
+                                    {/*<MailIcon/>*/}
+                                {/*</Badge>*/}
+                            {/*</IconButton>*/}
+                            {/*<IconButton color="inherit">*/}
+                                {/*<Badge className={classes.margin} badgeContent={17} color="secondary">*/}
+                                    {/*<NotificationsIcon/>*/}
+                                {/*</Badge>*/}
+                            {/*</IconButton>*/}
                             <IconButton
                                 aria-owns={isMenuOpen ? 'material-appbar' : null}
                                 aria-haspopup="true"

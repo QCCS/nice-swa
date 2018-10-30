@@ -4,12 +4,11 @@
 import React from 'react';
 import {withStyles} from '@material-ui/core/styles';
 import {connect} from 'react-redux';
-
+import HeaderContent from './components/header-content/header-content';
+import Routes from "./routes/routes";
 import Header from './components/header';
 import Footer from './components/footer';
-import Routes from "./routes/routes";
-import HeaderContent from './components/header-content/header-content';
-import SingleLineGridList from './pages/components-test/single-line-grid-list';
+import SingleLineGridList from './components/components-test/single-line-grid-list';
 
 const styles = theme => ({
     root: {
@@ -31,9 +30,9 @@ class App extends React.Component {
                 <HeaderContent/>
             </Header>
             <Routes/>
-            {!this.props.isHideFooter &&<Footer>
-                <SingleLineGridList/>
-            </Footer>}
+            {/*{!this.props.isHideFooter &&<Footer>*/}
+                {/*<SingleLineGridList/>*/}
+            {/*</Footer>}*/}
         </div> )
     }
 }

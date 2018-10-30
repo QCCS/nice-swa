@@ -5,8 +5,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import PropTypes from 'prop-types';
-import ControlledExpansionPanels from '../pages/components-test/controlled-expansion-panels';
-import SideNav from '../pages/components-test/side-nav';
+import ControlledExpansionPanels from '../components/components-test/controlled-expansion-panels';
+import SideNav from '../components/components-test/side-nav';
 import appContext from '../context-data/app-context';
 import appContextTwo from '../context-data/app-context-two';
 import actions from '../redux/action';
