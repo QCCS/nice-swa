@@ -1,5 +1,3 @@
-# node-blog-admin
-基于nice-swa
 # nice-swa
 ## 项目说明
 - nice-swa，读着：laishua，中文名：来耍。

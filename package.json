@@ -1,7 +1,7 @@
 {
-    "name": "node-blog-admin",
+    "name": "nice-swa",
     "version": "1.0.0",
-    "description": "node-blog-admin",
+    "description": "Management system scaffolding template",
     "main": "src/index.js",
     "scripts": {
         "test": "jest",
@@ -15,7 +15,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/QCCS/node-blog-admin.git"
+        "url": "git+https://github.com/QCCS/nice-swa.git"
     },
     "keywords": [
         "es",
@@ -58,9 +58,9 @@
     "author": "zhouli",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/QCCS/node-blog-admin/issues"
+        "url": "https://github.com/QCCS/nice-swa/issues"
     },
-    "homepage": "https://github.com/QCCS/node-blog-admin#readme",
+    "homepage": "https://github.com/QCCS/nice-swa#readme",
     "dependencies": {
         "@material-ui/core": "^3.1.0",
         "@material-ui/icons": "^3.0.1",
