@@ -307,12 +307,13 @@ class HeaderContent extends React.Component {
                         {/*<IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">*/}
                             {/*<MenuIcon/>*/}
                         {/*</IconButton>*/}
-                        <Typography className={classes.title} variant="title" color="inherit" noWrap>
+                        <Typography variant="title" color="inherit" noWrap>
                             Node Blog Manage System
                         </Typography>
 
                         <div className={classes.grow}/>
-                        <div className={classes.sectionDesktop}>
+                        {/*className={classes.sectionDesktop}*/}
+                        <div>
                             {/*<IconButton color="inherit">*/}
                                 {/*<Badge className={classes.margin} badgeContent={4} color="secondary">*/}
                                     {/*<MailIcon/>*/}
@@ -332,11 +333,11 @@ class HeaderContent extends React.Component {
                                 <AccountCircle/>
                             </IconButton>
                         </div>
-                        <div className={classes.sectionMobile}>
-                            <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
-                                <MoreIcon/>
-                            </IconButton>
-                        </div>
+                        {/*<div className={classes.sectionMobile}>*/}
+                            {/*<IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">*/}
+                                {/*<MoreIcon/>*/}
+                            {/*</IconButton>*/}
+                        {/*</div>*/}
                     </Toolbar>
                 </AppBar>
                 {renderMenu}

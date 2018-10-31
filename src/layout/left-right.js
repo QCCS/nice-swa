@@ -2,12 +2,15 @@
  * Created by zhouli on 18/9/17
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/layout/left-right.css';
+
 class LeftRight extends React.Component {
-    constructor(){
+    constructor() {
         super();
     }
-    componentDidMount(){
+
+    componentDidMount() {
     }
 
     render = () => {
@@ -15,7 +18,13 @@ class LeftRight extends React.Component {
             <div className="left">{this.props.left}</div>
             <div className="right">{this.props.right}</div>
             <div className="clear"></div>
-        </div> )
+        </div> );
     }
 }
+
+//for eslint
+LeftRight.propTypes = {
+    left: PropTypes.any,
+    right: PropTypes.any,
+};
 export default LeftRight;

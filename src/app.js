@@ -30,9 +30,9 @@ class App extends React.Component {
                 <HeaderContent/>
             </Header>
             <Routes/>
-            {/*{!this.props.isHideFooter &&<Footer>*/}
+            {!this.props.isHideFooter &&<Footer>
                 {/*<SingleLineGridList/>*/}
-            {/*</Footer>}*/}
+            </Footer>}
         </div> )
     }
 }

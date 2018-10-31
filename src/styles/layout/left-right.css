@@ -1,6 +1,9 @@
 .left-right-wrap{
     padding-top: 2px;
-    height: calc(100vh - 66px);
+    /*no footer height*/
+    /*height: calc(100vh - 66px);*/
+    /*has footer height*/
+    height: calc(100vh - 118px);
     overflow: auto;
 }
 .left-right-wrap .left {
@@ -9,7 +12,10 @@
     background-color: #f51657;
     min-height: 200px;
     padding-right: 4px;
-    height: calc(100vh - 66px);
+    /*no footer height*/
+    /*height: calc(100vh - 66px);*/
+    /*has footer height*/
+    height: calc(100vh - 118px);
     overflow: auto;
     position: absolute;
     top: 66px;

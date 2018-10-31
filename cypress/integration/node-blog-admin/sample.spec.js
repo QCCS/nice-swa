@@ -6,8 +6,11 @@ describe('My First Test', function() {
         expect(true).to.equal(true)
     })
 })
-describe('My First Test', function() {
-    it('Visits the Kitchen Sink', function() {
-        cy.visit('https://example.cypress.io')
+describe('My sec Test', function() {
+    it('Visits the huilianyi', function() {
+        cy.visit('http://uat.huilianyi.com')
     })
 })
+
+
+

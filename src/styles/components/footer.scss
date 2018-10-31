@@ -1,0 +1,27 @@
+.footer-wrap{
+    height: 50px;
+    margin-top: 2px;
+    /*border-top: solid 1px gray;*/
+    /*height: 40px;*/
+    /*position: absolute;*/
+    /*bottom: 0px;*/
+    /*opacity: 0.5;*/
+    /*width: calc(100vw - 234px);*/
+    /*left: 234px;*/
+    overflow: hidden;
+    background: #3f51b5;
+    .bei-an{
+        color: white;
+        float: left;
+        line-height: 25px;
+        font-size: 14px;
+        margin-left: 400px;
+    }
+    .footer-des-wrap{
+        color: white;
+        float: right;
+        line-height: 25px;
+        margin-right: 200px;
+        font-size: 14px;
+    }
+}
