@@ -139,7 +139,7 @@ class HeaderContent extends React.Component {
     }
     handleCloseLogout = () => {
         this.setState({anchorEl: false});
-        this.props.onButtonHideClick();
+        // this.props.onButtonHideClick();
         this.loginOutAction()
     }
     handleChangePhone = () => {
@@ -181,7 +181,7 @@ class HeaderContent extends React.Component {
         loginService(params)
             .then(res => {
                 console.log(res)
-                window.localStorage.setItem("authorization",res.data.data.access_token);
+                window.localStorage.setItem("authorization",res.data.token.access_token);
             })
     }
     //退出
@@ -203,7 +203,7 @@ class HeaderContent extends React.Component {
                 onClose={this.handleMenuClose}
             >
                 <MenuItem onClick={this.handleCloseLogout}>退出</MenuItem>
-                {/*<MenuItem onClick={this.handleLogin}>Login</MenuItem>*/}
+                <MenuItem onClick={this.handleLogin}>登陆</MenuItem>
                 {/*<MenuItem onClick={this.handleClose}>Profile</MenuItem>*/}
             </Menu>
         );

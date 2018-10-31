@@ -3,7 +3,12 @@
  */
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 import ControlledExpansionPanels from '../components/components-test/controlled-expansion-panels';
 import SideNav from '../components/components-test/side-nav';
 import appContext from '../context-data/app-context';
@@ -74,9 +79,15 @@ class LeftMiddleRight extends React.Component {
             });
     };
     render = () => {
-        return ( <div className='left-middle-right-wrap'>
+        let link = props => <Link to={'/list/Dashboard'} {...props} />;
 
+        return ( <div className='left-middle-right-wrap'>
             <div className='left'>
+                <List component="nav">
+                    <ListItem button component={link}>
+                        <ListItemText inset primary="后台管理系统"/>
+                    </ListItem>
+                </List>
                 <h1>{this.props.left}</h1>
                 <div onClick={this.test}>test</div>
             </div>

@@ -3,11 +3,15 @@ import axios from 'axios';
 // 请求拦截器
 axios.interceptors.request.use(function (config) {
     // Do something before request is sent
-    console.log(config)
+    console.log(config);
     config.headers = {
-        'Content-Type':'application/json',
-        'authorization':'Bearer '+window.localStorage.getItem('authorization')
+        'Content-Type': 'application/json',
+    };
+    if (window.localStorage.getItem('authorization') + '' != 'null') {
+        config.headers['authorization'] = 'Bearer ' + window.localStorage.getItem('authorization');
     }
+
+
     return config;
 }, function (error) {
     // Do something with request error
@@ -18,7 +22,7 @@ axios.interceptors.request.use(function (config) {
 // 响应拦截器
 axios.interceptors.response.use(function (response) {
     // Do something with response data
-    console.log(response)
+    console.log(response);
     return response;
 }, function (error) {
     // Do something with response error
@@ -48,6 +52,6 @@ function delErr(error) {
 export default function request(args) {
     return axios(args)
         .catch(function (error) {
-            delErr(error)
+            delErr(error);
         });
 }
