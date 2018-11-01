@@ -21,12 +21,41 @@ const GetPostListErr = {
     type: 'GetPostListErr'
 };
 
+//获取博客列表
+const GetPostsIng = {
+    type: 'GetPostsIng'
+};
+const GetPostsOk = {
+    type: 'GetPostsOk'
+};
+const GetPostsErr = {
+    type: 'GetPostsErr'
+};
+//获取博客
+const GetPostIng = {
+    type: 'GetPostIng'
+};
+const GetPostOk = {
+    type: 'GetPostOk'
+};
+const GetPostErr = {
+    type: 'GetPostErr'
+};
+
 let actions = {
     GetPostListIng,
     GetPostListOk,
     GetPostListErr,
     PrintHelloAction,
     HideFooterAction,
-    ShowFooterAction
+    ShowFooterAction,
+
+    GetPostsIng,
+    GetPostsOk,
+    GetPostsErr,
+
+    GetPostIng,
+    GetPostOk,
+    GetPostErr
 };
 export default actions;

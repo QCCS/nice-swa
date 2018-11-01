@@ -94,7 +94,7 @@ class LeftMiddleRight extends React.Component {
             <div className='right'>
                 <h1>{this.props.right}</h1>
                 <h1>{this.props.text}</h1>
-                <h1 className="request-res">{this.props.getPost}</h1>
+                <h1 className="request-res">请求完毕显示：{this.props.getPost}</h1>
                 <div onClick={this.props.onButtonClick}>print hello</div>
                 <div className='request-btn' onClick={this.props.onAjaxButtonClick}>发送请求</div>
                 <div onClick={this.getJson119}>fetch get</div>
@@ -159,8 +159,8 @@ LeftMiddleRight.childContextTypes = {
 //使用 this.props.text
 function mapStateToProps(state) {
     return {
-        text: state.text,
-        getPost: state.getPost,// 异步action
+        text: state.reducerTest.text,
+        getPost: state.reducerTest.getPost,// 异步action
     };
 }
 
@@ -176,10 +176,10 @@ function mapDispatchToProps(dispatch) {
                 let res = parseInt(Math.random() * 100);
                 console.log(res);
                 if (res % 2 === 0) {
-                    actions.GetPostListOk.payload = '请求结果';
+                    actions.GetPostListOk.payload = '请求结果'+res;
                     dispatch(actions.GetPostListOk);
                 } else {
-                    actions.GetPostListErr.payload = '请求结果';
+                    actions.GetPostListErr.payload = '请求结果'+res;
                     dispatch(actions.GetPostListErr);
                 }
             }, 2000);

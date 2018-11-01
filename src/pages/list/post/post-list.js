@@ -1,73 +1,40 @@
 /**
  * Created by zhouli on 18/9/19
+ * 保持组件的清洁
  */
 import React from 'react';
-import {withStyles} from '@material-ui/core/styles';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 import '../../../styles/pages/list/post/post-list.scss';
-import {getPosts,getPost} from '../../../service/post-api';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-const styles = theme => ({
-    root: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'flex-end',
-    },
-    icon: {
-        margin: theme.spacing.unit * 2,
-    },
-    iconHover: {
-        margin: theme.spacing.unit * 2,
-        '&:hover': {
-            color: "#ff0000",
-        },
-    },
-});
+import PostListActions from './post-list.service';
 
 class PostList extends React.Component {
     constructor() {
         super();
-        this.state = {
-            posts: [],
-            post:{}
-        };
-
+        this.state = {};
     }
 
     componentDidMount() {
-        this.getPostList();
-    }
-    getPostList = () => {
-        getPosts()
-            .then(res => {
-                console.log(res.data)
-                this.setState({
-                    posts:res.data
-                })
-            })
-
-    }
-    getPostById=(id)=>{
-        getPost(id)
-            .then(res => {
-                console.log(res.data)
-                this.setState({
-                    post:res.data.post
-                })
-            })
+        this.props.getPostList();
     }
 
     render = () => {
-        let posts = this.state.posts;
-        let post = this.state.post;
+        let posts = this.props.posts;
+        let post = this.props.post;
         return (<div className="post-list-wrap">
+            <div className='request-btn' onClick={this.props.getPostList}>刷新博客列表</div>
             <h1 className="post-list-title">博客列表</h1>
             <div className="post-list-left">
                 <List component="nav">
-                    {posts.map(item=>{
-                        return <ListItem button onClick={()=>{this.getPostById(item.id)}}>
-                            <ListItemText primary={item.title} />
+                    {posts.map && posts.map((item) => {
+                        return <ListItem key={item.id} button
+                                         onClick={() => {
+                                             this.props.getPostById(item.id)
+                                         }}>
+                            <ListItemText primary={item.title}/>
                         </ListItem>
                     })}
                 </List>
@@ -78,9 +45,26 @@ class PostList extends React.Component {
                 <h1>{post.content}</h1>
             </div>
             <div className="clear"></div>
-
         </div>)
     }
 }
+//for eslint
+PostList.propTypes = {
+    getPostList: PropTypes.any,
+    getPostById: PropTypes.any,
+    posts: PropTypes.any,
+    post: PropTypes.any,
+};
+function mapStateToProps(state) {
+    return {
+        posts: state.reducerPost.posts,// 博客列表
+        post: state.reducerPost.post,// 博客详情
+    };
+}
+function mapDispatchToProps(dispatch) {
+    return PostListActions(dispatch);
+}
+const PostListWrap = connect(mapStateToProps, mapDispatchToProps)(PostList);
+export default PostListWrap;
 
-export default withStyles(styles)(PostList);
+

@@ -1,13 +1,15 @@
 /**
  * Created by zhouli on 18/9/20
  */
+import { combineReducers } from 'redux';
 //reducer
 const initialState = {
     text: 'Hello',
     isHideFooter: false,//是否隐藏footer
     getPost: '',
 };
-const reducer = (state = initialState, action) => {
+const reducerTest = (state = initialState, action) => {
+    console.log(action);
     switch (action.type) {
     case 'PRINT_HELLO':
         return {
@@ -34,7 +36,52 @@ const reducer = (state = initialState, action) => {
             getPost: action.payload
         };
     default:
-        return initialState;
+        return state;
     }
 };
-export default reducer;
+//获取博客列表，博客详情
+const initialPostState = {
+    posts: [],
+    post: {},
+};
+const reducerPost = (state = initialPostState, action) => {
+    console.log(action);
+    switch (action.type) {
+    case 'GetPostsIng':
+        return {
+            ...state,//不然会undefined
+            posts: []//自动覆盖
+        };
+    case 'GetPostsOk':
+        return {
+            ...state,
+            posts: action.payload
+        };
+    case 'GetPostsErr':
+        return {
+            ...state,
+            posts: action.payload
+        };
+    case 'GetPostIng':
+        return {
+            ...state,
+            post: {}
+        };
+    case 'GetPostOk':
+        return {
+            ...state,
+            post: action.payload
+        };
+    case 'GetPostErr':
+        return {
+            ...state,
+            post: action.payload
+        };
+    default:
+        return state;
+    }
+};
+export default combineReducers({
+    reducerTest,
+    reducerPost
+});
