@@ -3,7 +3,12 @@
  */
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 import ControlledExpansionPanels from '../components/components-test/controlled-expansion-panels';
 import SideNav from '../components/components-test/side-nav';
 import appContext from '../context-data/app-context';
@@ -74,16 +79,22 @@ class LeftMiddleRight extends React.Component {
             });
     };
     render = () => {
-        return ( <div className='left-middle-right-wrap'>
+        let link = props => <Link to={'/list/Dashboard'} {...props} />;
 
+        return ( <div className='left-middle-right-wrap'>
             <div className='left'>
+                <List component="nav">
+                    <ListItem button component={link}>
+                        <ListItemText inset primary="后台管理系统"/>
+                    </ListItem>
+                </List>
                 <h1>{this.props.left}</h1>
                 <div onClick={this.test}>test</div>
             </div>
             <div className='right'>
                 <h1>{this.props.right}</h1>
                 <h1>{this.props.text}</h1>
-                <h1 className="request-res">{this.props.getPost}</h1>
+                <h1 className="request-res">请求完毕显示：{this.props.getPost}</h1>
                 <div onClick={this.props.onButtonClick}>print hello</div>
                 <div className='request-btn' onClick={this.props.onAjaxButtonClick}>发送请求</div>
                 <div onClick={this.getJson119}>fetch get</div>
@@ -148,8 +159,8 @@ LeftMiddleRight.childContextTypes = {
 //使用 this.props.text
 function mapStateToProps(state) {
     return {
-        text: state.text,
-        getPost: state.getPost,// 异步action
+        text: state.reducerTest.text,
+        getPost: state.reducerTest.getPost,// 异步action
     };
 }
 
@@ -165,10 +176,10 @@ function mapDispatchToProps(dispatch) {
                 let res = parseInt(Math.random() * 100);
                 console.log(res);
                 if (res % 2 === 0) {
-                    actions.GetPostListOk.payload = '请求结果';
+                    actions.GetPostListOk.payload = '请求结果'+res;
                     dispatch(actions.GetPostListOk);
                 } else {
-                    actions.GetPostListErr.payload = '请求结果';
+                    actions.GetPostListErr.payload = '请求结果'+res;
                     dispatch(actions.GetPostListErr);
                 }
             }, 2000);

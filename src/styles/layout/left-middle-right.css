@@ -10,9 +10,11 @@
     float: left;
 }
 .left-middle-right-wrap .center{
-    min-height: 100px;
+    min-height: 800px;
     background-color: #0895cc;
-    padding: 10px 310px;
+    margin-left: 302px;
+    margin-right: 302px;
+    padding: 10px;
 }
 .left-middle-right-wrap .right{
     width: 300px;
@@ -21,6 +23,8 @@
     font-size: 20px;
     color: #fdf6e3;
     float: right;
+    padding: 10px;
+    box-sizing: border-box;
 }
 .left-middle-right-wrap .clear{
     clear: both;
