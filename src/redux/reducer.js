@@ -2,6 +2,26 @@
  * Created by zhouli on 18/9/20
  */
 import { combineReducers } from 'redux';
+
+const initialSideNavState = {
+    isHideSideNav: false,//是否缩进侧边导航,默认显示
+};
+const reducerSideNav = (state = initialSideNavState, action) => {
+    console.log(action);
+    switch (action.type) {
+    case 'ShowSideNav':
+        return {
+            isHideSideNav: false
+        };
+    case 'HideSideNav':
+        return {
+            isHideSideNav: true
+        };
+    default:
+        return state;
+    }
+};
+
 //reducer
 const initialState = {
     text: 'Hello',
@@ -82,6 +102,7 @@ const reducerPost = (state = initialPostState, action) => {
     }
 };
 export default combineReducers({
+    reducerSideNav,
     reducerTest,
     reducerPost
 });

@@ -66,7 +66,7 @@ let list = {
         name: '博客管理',
         parentLink: 'list',
         icon: <TabIcon></TabIcon>,
-        openStateFun: 'handleClickPostList',
+        openStateFun: 'handleClickList',
         openState: 'postNav',
         children: {
             PostNewLink: {
@@ -109,7 +109,7 @@ let list = {
         name: '标签管理',
         parentLink: 'list',
         icon: <InboxIcon></InboxIcon>,
-        openStateFun: 'handleClickTagList',
+        openStateFun: 'handleClickList',
         openState: 'tagNav',
         children: {
             TagListLink: {
@@ -127,7 +127,7 @@ let list = {
         name: '评论管理',
         parentLink: 'list',
         icon: <DraftsIcon></DraftsIcon>,
-        openStateFun: 'handleClickCommentList',
+        openStateFun: 'handleClickList',
         openState: 'commentNav',
         children: {
             CommentListLink: {
@@ -145,7 +145,7 @@ let list = {
         name: '用户管理',
         parentLink: 'list',
         icon: <InboxIcon></InboxIcon>,
-        openStateFun: 'handleClickUserList',
+        openStateFun: 'handleClickList',
         openState: 'userNav',
         children: {
             UserListLink: {

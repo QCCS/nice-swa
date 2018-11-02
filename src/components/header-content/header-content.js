@@ -26,9 +26,9 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Slide from '@material-ui/core/Slide';
 import CloseIcon from '@material-ui/icons/Close';
-import {connect} from 'react-redux';
-import Paper from '@material-ui/core/Paper';
 
+import Paper from '@material-ui/core/Paper';
+import {connect} from 'react-redux';
 import actions from '../../redux/action';
 import {loginService} from '../../service/api';
 
@@ -50,7 +50,6 @@ const styles = theme => ({
         flexGrow: 1,
     },
     menuButton: {
-        marginLeft: -12,
         marginRight: 20,
     },
     title: {
@@ -175,19 +174,23 @@ class HeaderContent extends React.Component {
     //登陆
     loginAction = () => {
         let params = {
-            mobile:this.state.mobile,
-            password:this.state.password
+            mobile: this.state.mobile,
+            password: this.state.password
         }
         loginService(params)
             .then(res => {
                 console.log(res)
-                window.localStorage.setItem("authorization",res.data.token.access_token);
+                window.localStorage.setItem("authorization", res.data.token.access_token);
             })
     }
     //退出
     loginOutAction = () => {
-        window.localStorage.setItem("authorization",null);
+        window.localStorage.setItem("authorization", null);
     }
+    toggleSideNav = () => {
+        this.props.isHideSideNav ? this.props.onButtonShowSideNav() : this.props.onButtonHideSideNav()
+    }
+
     render() {
         const {anchorEl, mobileMoreAnchorEl, checkedPhone, checkedEmail} = this.state;
         const {classes} = this.props;
@@ -203,7 +206,7 @@ class HeaderContent extends React.Component {
                 onClose={this.handleMenuClose}
             >
                 <MenuItem onClick={this.handleCloseLogout}>退出</MenuItem>
-                <MenuItem onClick={this.handleLogin}>登陆</MenuItem>
+                <MenuItem onClick={this.handleLogin}>登录</MenuItem>
                 {/*<MenuItem onClick={this.handleClose}>Profile</MenuItem>*/}
             </Menu>
         );
@@ -304,10 +307,12 @@ class HeaderContent extends React.Component {
 
                 <AppBar position="static">
                     <Toolbar>
-                        {/*<IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">*/}
-                            {/*<MenuIcon/>*/}
-                        {/*</IconButton>*/}
                         <Typography variant="title" color="inherit" noWrap>
+                            <IconButton className={classes.menuButton}
+                                        onClick={this.toggleSideNav}
+                                        color="inherit" aria-label="Open drawer">
+                                <MenuIcon/>
+                            </IconButton>
                             Node Blog Manage System
                         </Typography>
 
@@ -315,14 +320,14 @@ class HeaderContent extends React.Component {
                         {/*className={classes.sectionDesktop}*/}
                         <div>
                             {/*<IconButton color="inherit">*/}
-                                {/*<Badge className={classes.margin} badgeContent={4} color="secondary">*/}
-                                    {/*<MailIcon/>*/}
-                                {/*</Badge>*/}
+                            {/*<Badge className={classes.margin} badgeContent={4} color="secondary">*/}
+                            {/*<MailIcon/>*/}
+                            {/*</Badge>*/}
                             {/*</IconButton>*/}
                             {/*<IconButton color="inherit">*/}
-                                {/*<Badge className={classes.margin} badgeContent={17} color="secondary">*/}
-                                    {/*<NotificationsIcon/>*/}
-                                {/*</Badge>*/}
+                            {/*<Badge className={classes.margin} badgeContent={17} color="secondary">*/}
+                            {/*<NotificationsIcon/>*/}
+                            {/*</Badge>*/}
                             {/*</IconButton>*/}
                             <IconButton
                                 aria-owns={isMenuOpen ? 'material-appbar' : null}
@@ -334,9 +339,9 @@ class HeaderContent extends React.Component {
                             </IconButton>
                         </div>
                         {/*<div className={classes.sectionMobile}>*/}
-                            {/*<IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">*/}
-                                {/*<MoreIcon/>*/}
-                            {/*</IconButton>*/}
+                        {/*<IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">*/}
+                        {/*<MoreIcon/>*/}
+                        {/*</IconButton>*/}
                         {/*</div>*/}
                     </Toolbar>
                 </AppBar>
@@ -352,13 +357,18 @@ HeaderContent.propTypes = {
 };
 
 function mapStateToProps(state) {
-    return {isHideFooter: state.isHideFooter}
+    return {
+        isHideFooter: state.isHideFooter,
+        isHideSideNav: state.reducerSideNav.isHideSideNav,//
+    }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         onButtonHideClick: () => dispatch(actions.HideFooterAction),
         onButtonShowClick: () => dispatch(actions.ShowFooterAction),
+        onButtonHideSideNav: () => dispatch(actions.HideSideNav),
+        onButtonShowSideNav: () => dispatch(actions.ShowSideNav),
     }
 }
 

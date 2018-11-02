@@ -14,6 +14,9 @@ import {Link} from 'react-router-dom';
 // import Icon from '@material-ui/core/Icon';
 // import Button from '@material-ui/core/Button';
 import routeConf from '../../routes/router-conf';
+import '../../styles/components/side-nav/side-nav-list.scss';
+import {connect} from 'react-redux';
+import actions from '../../redux/action';
 const styles = theme => ({
     root: {
         width: '100%',
@@ -31,22 +34,12 @@ const styles = theme => ({
 
 class SideNavList extends React.Component {
     state = {
-        tagNav: false,
-        userNav: false,
-        commentNav: false,
-        postNav: false
     };
-    handleClickTagList = () => {
-        this.setState(state => ({tagNav: !state.tagNav}));
-    };
-    handleClickUserList = () => {
-        this.setState(state => ({userNav: !state.userNav}));
-    };
-    handleClickCommentList = () => {
-        this.setState(state => ({commentNav: !state.commentNav}));
-    };
-    handleClickPostList = () => {
-        this.setState(state => ({postNav: !state.postNav}));
+    handleClickList = (stateName) => {
+        this.props.onButtonShowSideNav();
+        let state = this.state;
+        state[stateName] = !state[stateName];
+        this.setState(state);
     };
     //渲染菜单
     renderNavList = (route,that) => {
@@ -68,7 +61,7 @@ class SideNavList extends React.Component {
         }
         function _getItemByKey(nav) {
             let link = props => <Link to={`${match.url}/${nav['link']}`} {...props} />;
-            return (<ListItem button component={link}>
+            return (<ListItem button component={link} className="nav-item" onClick={that.props.onButtonShowSideNav}>
                 <ListItemIcon>
                     {nav['icon']}
                 </ListItemIcon>
@@ -77,7 +70,7 @@ class SideNavList extends React.Component {
         }
         function _getItemNoLink(nav,openStateFun,openState) {
             return (
-                <ListItem button onClick={that[openStateFun]}>
+                <ListItem button onClick={()=>{that[openStateFun](openState);}} className="nav-item">
                     <ListItemIcon>
                         {nav['icon']}
                     </ListItemIcon>
@@ -102,20 +95,18 @@ class SideNavList extends React.Component {
         const HomeLink = props => <Link exact to={'/'} {...props} />;
         const AboutLink = props => <Link exact to={'/about'} {...props} />;
         return (
-            <div className={classes.root}>
+            <div className={classes.root +' side-nav-list-wrap'}>
                 <List component="nav">
-                    <ListItem button component={HomeLink}>
+                    <ListItem button component={HomeLink} className="nav-item">
                         <ListItemIcon>
                             <HomeIcon/>
                         </ListItemIcon>
                         <ListItemText inset primary="首页"/>
                     </ListItem>
                 </List>
-                <hr/>
                 {this.renderNavList(routeConf.list,this)}
-                <hr/>
                 <List component="nav">
-                    <ListItem button component={AboutLink}>
+                    <ListItem button component={AboutLink} className="nav-item">
                         <ListItemIcon>
                             <HistoryIcon/>
                         </ListItemIcon>
@@ -131,4 +122,19 @@ SideNavList.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SideNavList);
+function mapStateToProps(state) {
+    return {
+        isHideSideNav: state.reducerSideNav.isHideSideNav,//
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        onButtonHideSideNav: () => dispatch(actions.HideSideNav),
+        onButtonShowSideNav: () => dispatch(actions.ShowSideNav),
+    };
+}
+
+const SideNavListWrap = connect(mapStateToProps, mapDispatchToProps)(SideNavList);
+export default withStyles(styles)(SideNavListWrap);
+
