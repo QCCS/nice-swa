@@ -1,10 +1,9 @@
 # nice-swa
 ## 项目说明
-- nice-swa，读着:laishua,中文名：来耍。
+- nice-swa，读着：laishua，中文名：来耍。
 - 这是一个中后台管理系统脚手架模板，
-使用 react 技术栈，redux 数据流管理，UI 框架为 materail-design,可以写 css,也可以写 scss,
-打包工具为webpack4。
-集成了 jest 单元测试，cypress-e2e 测试；
+使用 react 技术栈，redux 数据流管理，UI 框架为 materail-design，可以写 css，也可以写 scss，打包工具为webpack4。
+集成了 jest 单元测试，cypress-e2e 测试。
 - [项目地址](https://github.com/QCCS/nice-swa)
 - [在线文档](https://qccs.github.io/nice-swa/docs/#/)
 
@@ -89,3 +88,7 @@ npm 源管理
 
 ## 参考网站
 - [material-ui](https://material-ui.com/)
+
+## 勘误及提问
+如果有疑问或者发现错误，可以在相应的 issues 进行提问或勘误。
+如果喜欢或者有所启发，欢迎 star，对作者也是一种鼓励。
