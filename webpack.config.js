@@ -8,18 +8,34 @@ let env = process.env;
 console.log(env.NODE_ENV)
 let proxy = null;
 let devtool = null;
-let proxyDev = {
-    '/api':{
-        target: "http://share.json119.com",
-        secure: true,
-        changeOrigin: true,
-        pathRewrite: { '^/api' : '' }
+// let proxyDev = {
+//     '/api':{
+//         target: "http://localhost:9313",
+//         secure: false,
+//         changeOrigin: true,
+//         pathRewrite: { '^/api' : '' }
+//     },
+//     '/admin':{
+//         target: "http://localhost:9313",
+//         secure: false,
+//         changeOrigin: true,
+//         pathRewrite: { '^/admin' : '' }
+//     }
+// }
+let proxyDev=[
+    {
+        context: [
+            '/api', '/admin'
+        ],
+        target: 'http://localhost:9313',
+        secure: false,
+        changeOrigin: true
     }
-}
+]
 let proxyProd = {
     '/api':{
-        target: "http://share.json119.com",
-        secure: true,
+        target: "http://localhost:9313",
+        secure: false,
         changeOrigin: true,
         pathRewrite: { '^/api' : '' }
     }
@@ -31,7 +47,7 @@ if(env.NODE_ENV==="dev"){
     proxy = proxyProd;
     devtool = "cheap-module-eval-source-map";
 }
-
+console.log(proxy)
 module.exports = {
     entry: __dirname + '/src/index.js',//入口文件
     output: {

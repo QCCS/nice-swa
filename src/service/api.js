@@ -9,7 +9,6 @@ let baseUrl = conf.baseUrl;
 export function loginService(obj) {
     return request(baseUrl+'/api/login'+'?mobile='+obj.mobile+'&password='+obj.password, {
         method: 'get',
-
     });
 }
 

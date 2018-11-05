@@ -1,6 +1,14 @@
 /**
  * Created by zhouli on 18/9/20
  */
+//布局控制
+const HideSideNav = {
+    type: 'HideSideNav'
+};
+const ShowSideNav= {
+    type: 'ShowSideNav'
+};
+
 const PrintHelloAction = {
     type: 'PRINT_HELLO'
 };
@@ -43,6 +51,9 @@ const GetPostErr = {
 };
 
 let actions = {
+    HideSideNav,
+    ShowSideNav,
+
     GetPostListIng,
     GetPostListOk,
     GetPostListErr,
