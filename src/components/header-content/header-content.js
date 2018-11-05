@@ -177,15 +177,18 @@ class HeaderContent extends React.Component {
             mobile: this.state.mobile,
             password: this.state.password
         }
+        console.log('登陆')
         loginService(params)
             .then(res => {
+                console.log('登陆完成')
                 console.log(res)
-                window.localStorage.setItem("authorization", res.data.token.access_token);
+                //存在localStorge中，UI自动化测试的时候，有点坑
+                window.sessionStorage.setItem("authorization", res.data.token.access_token);
             })
     }
     //退出
     loginOutAction = () => {
-        window.localStorage.setItem("authorization", null);
+        window.sessionStorage.setItem("authorization", null);
     }
     toggleSideNav = () => {
         this.props.isHideSideNav ? this.props.onButtonShowSideNav() : this.props.onButtonHideSideNav()
@@ -206,7 +209,7 @@ class HeaderContent extends React.Component {
                 onClose={this.handleMenuClose}
             >
                 <MenuItem onClick={this.handleCloseLogout}>退出</MenuItem>
-                <MenuItem onClick={this.handleLogin}>登录</MenuItem>
+                <MenuItem onClick={this.handleLogin} className="open-login-btn">登录</MenuItem>
                 {/*<MenuItem onClick={this.handleClose}>Profile</MenuItem>*/}
             </Menu>
         );
@@ -260,19 +263,19 @@ class HeaderContent extends React.Component {
                             <Typography variant="title" color="inherit" className={classes.flex}>
                                 Login
                             </Typography>
-                            <Button color="inherit" onClick={this.handleClose}>
-                                Confirm
+                            <Button color="inherit" onClick={this.handleClose} className="logined-ok-btn">
+                                确定
                             </Button>
                         </Toolbar>
                     </AppBar>
                     <List>
-                        <ListItem button onClick={this.handleChangePhone}>
-                            <ListItemText primary="Phone Login" secondary="zhouli"/>
+                        <ListItem button onClick={this.handleChangePhone} className="phone-login-way">
+                            <ListItemText primary="手机登陆" secondary="zhouli"/>
                             {checkedPhone + ""}
                         </ListItem>
                         <Divider/>
                         <ListItem button onClick={this.handleChangeEmail}>
-                            <ListItemText primary="Email login" secondary="json119.com"/>
+                            <ListItemText primary="邮箱登陆" secondary="json119.com"/>
                             {checkedEmail + ""}
                         </ListItem>
                     </List>
@@ -282,20 +285,20 @@ class HeaderContent extends React.Component {
                         <Paper elevation={2} className={classes.paper}>
                             <div className={classes.paperInner}>Phone</div>
 
-                            <div>
+                            <div className="mobile-input-wrap">
                                 <h1>mobile</h1>
                                 <input onChange={(e) => {
                                     this.onPhoneChange(e)
                                 }}/>
                             </div>
-                            <div>
+                            <div className="password-input-wrap">
                                 <h1>password</h1>
                                 <input onChange={(e) => {
                                     this.onPasswordChange(e)
                                 }}/>
                             </div>
 
-                            <div onClick={this.loginAction}>登陆</div>
+                            <div onClick={this.loginAction} className="mobile-password-login-btn">登陆</div>
                         </Paper>
                     </Slide>
                     <Slide direction="up" in={checkedEmail} mountOnEnter unmountOnExit>
@@ -308,7 +311,7 @@ class HeaderContent extends React.Component {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography variant="title" color="inherit" noWrap>
-                            <IconButton className={classes.menuButton}
+                            <IconButton className={classes.menuButton+' header-toggle-class'}
                                         onClick={this.toggleSideNav}
                                         color="inherit" aria-label="Open drawer">
                                 <MenuIcon/>
@@ -332,6 +335,7 @@ class HeaderContent extends React.Component {
                             <IconButton
                                 aria-owns={isMenuOpen ? 'material-appbar' : null}
                                 aria-haspopup="true"
+                                className="open-login-model"
                                 onClick={this.handleProfileMenuOpen}
                                 color="inherit"
                             >

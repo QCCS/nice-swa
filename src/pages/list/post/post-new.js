@@ -94,6 +94,7 @@ class PostList extends React.Component {
             />
             <br/>
             <Button
+                className="new-post-save-btn"
                 variant="contained"
                 color="primary"
                 disableRipple

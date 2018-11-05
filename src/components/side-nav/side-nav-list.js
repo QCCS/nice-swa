@@ -70,7 +70,7 @@ class SideNavList extends React.Component {
         }
         function _getItemNoLink(nav,openStateFun,openState) {
             return (
-                <ListItem button onClick={()=>{that[openStateFun](openState);}} className="nav-item">
+                <ListItem button onClick={()=>{that[openStateFun](openState);}} className={'nav-item '+openState+'item'}>
                     <ListItemIcon>
                         {nav['icon']}
                     </ListItemIcon>

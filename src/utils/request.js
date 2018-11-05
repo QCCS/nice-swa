@@ -3,15 +3,18 @@ import axios from 'axios';
 // 请求拦截器
 axios.interceptors.request.use(function (config) {
     // Do something before request is sent
-    console.log(config);
+    // console.log(config);
+    //authorization 做单元测试的时候，加上
     config.headers = {
         'Content-Type': 'application/json',
+        'authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsIm5hbWUiOiLlkajnq4siLCJlbWFpbCI6IjE1OTIxNTUyOTQxQHFxLmNvbSIsIm1vYmlsZSI6IjE1OTIxNTUyOTkxIiwiaWF0IjoxNTQxMzg3NzAyLCJleHAiOjE1NDEzOTEzMDJ9.DzzlxztbC4x6bx_qQM6S9KlTR1SEEUT-xLG-I2zRt-c'
     };
-    if (window.localStorage.getItem('authorization') + '' != 'null') {
-        config.headers['authorization'] = 'Bearer ' + window.localStorage.getItem('authorization');
+    //这地方做前端接口测试的时候，稍微有点坑，window没有定义，跑不通
+    let window = window || null;
+    if (window && window.sessionStorage.getItem('authorization') + '' != 'null') {
+        config.headers['authorization'] = 'Bearer ' + window.sessionStorage.getItem('authorization');
     }
-
-
+    console.log(config.headers);
     return config;
 }, function (error) {
     // Do something with request error
@@ -22,7 +25,7 @@ axios.interceptors.request.use(function (config) {
 // 响应拦截器
 axios.interceptors.response.use(function (response) {
     // Do something with response data
-    console.log(response);
+    // console.log(response);
     return response;
 }, function (error) {
     // Do something with response error
